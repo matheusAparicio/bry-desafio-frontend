@@ -1,0 +1,32 @@
+<div class="login-container">
+  <div class="login-card">
+
+    <h2>Bem-vindo(a)</h2>
+    <p class="subtitle">Entre com suas credenciais para continuar</p>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      <div class="input-group">
+        <label for="login">Login</label>
+        <input id="login" formControlName="email" placeholder="Digite seu login">
+      </div>
+
+      <div class="input-group">
+        <label for="password">Senha</label>
+        <input id="password" type="password" formControlName="password" placeholder="Digite sua senha">
+      </div>
+
+      <button class="btn-login" type="submit" [disabled]="form.invalid || loading()">{{loading() ? 'Entrando...' : 'Entrar'}}</button>
+
+      @if (error) {
+        <p class="error">{{ error }}</p>
+      }
+
+      <p class="register-text">
+        Não tem conta?
+        <a routerLink="/register">Cadastre-se</a>
+      </p>
+    </form>
+
+  </div>
+</div>
