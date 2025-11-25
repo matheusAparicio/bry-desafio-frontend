@@ -1,3 +1,3 @@
 export const environment = {
-    api: 'http://127.0.0.1:8001/api',
+    api: 'https://bry-desafio-backend-production.up.railway.app/api',
 };

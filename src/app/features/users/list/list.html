@@ -1,0 +1,37 @@
+<div class="page-container">
+    <h2 *ngIf="mode() === 'customers'">Clientes</h2>
+    <h2 *ngIf="mode() === 'employees'">Funcionários</h2>
+
+    <table class="table" *ngIf="users().length > 0; else empty">
+        <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Endereço</th>
+            <th>Tipo</th>
+            <th style="text-align:right;">Ações</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let u of users()">
+            <td>{{ u.name }}</td>
+            <td>{{ u.email }}</td>
+            <td>{{ u.address }}</td>
+            <td>{{ u.type }}</td>
+
+            <td class="actions">
+            <button *ngIf="isEmployee()" class="edit" (click)="edit(u)">Editar</button>
+            <button *ngIf="isEmployee()" class="delete" (click)="remove(u.id)">Excluir</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <ng-template #empty>
+        <p class="empty">Nenhum usuário encontrado.</p>
+    </ng-template>
+    </div>
+
+<button class="fab" (click)="fabAction()">+</button>
+  

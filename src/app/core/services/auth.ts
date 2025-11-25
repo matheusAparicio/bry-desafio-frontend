@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { environment } from 'src/environments/environment';
@@ -8,43 +8,48 @@ import { environment } from 'src/environments/environment';
 })
 export class Auth {
 
+  user = signal<any | null>(null);
+
   constructor(
     private http: HttpClient,
     private router: Router
   ) {}
 
-  login(data: { email: string | null; password: string | null }) {
-    return this.http.post<{ token: string }>(`${environment.api}/login`, data);
-  }
-
-  logout() {
-    const token = this.getToken();
-
-    if (token) {
-      this.http.post(
-        `${environment.api}/logout`,
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`
-          }
-        }
-      ).subscribe();
-    }
-
-    localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+  login(credentials: any) {
+    return this.http.post<{ token: string }>(`${environment.api}/login`, credentials);
   }
 
   saveToken(token: string) {
     localStorage.setItem('token', token);
   }
 
-  getToken(): string | null {
+  getToken() {
     return localStorage.getItem('token');
   }
 
-  isLoggedIn(): boolean {
-    return !!this.getToken();
+  loadUser() {
+    return this.http.get(`${environment.api}/user`).subscribe({
+      next: (res: any) => {
+        this.user.set(res.data);
+        localStorage.setItem('user', JSON.stringify(res.data));
+      },
+      error: () => {
+        this.user.set(null);
+      }
+    });
+  }
+
+  restoreUserFromStorage() {
+    const saved = localStorage.getItem('user');
+    if (saved) {
+      this.user.set(JSON.parse(saved));
+    }
+  }
+
+  logout() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    this.user.set(null);
+    this.router.navigate(['/login']);
   }
 }

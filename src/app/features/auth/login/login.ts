@@ -1,7 +1,8 @@
 import { Component, signal } from '@angular/core';
 import { FormGroup, FormControl, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
-import { Auth } from '../../../core/services/auth';
+import { Auth } from 'src/app/core/services/auth';
+
 
 @Component({
   selector: 'app-login',
@@ -21,7 +22,7 @@ export class Login {
   loading = signal(false);
 
   constructor(
-    private auth: Auth, 
+    private auth: Auth,
     private router: Router,
   ) {}
 
@@ -35,6 +36,7 @@ export class Login {
       next: (res) => {
         this.loading.set(false);
         this.auth.saveToken(res.token);
+        this.auth.loadUser();
         this.router.navigate(['/companies']);
       },
       error: (err) => {

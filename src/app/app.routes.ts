@@ -24,19 +24,19 @@ export const routes: Routes = [
         {
           path: 'employees',
           loadComponent: () =>
-            import('./features/employees/list/list')
+            import('./features/users/list/list')
               .then(m => m.List),
         },
         {
           path: 'employees/new',
           loadComponent: () =>
-            import('./features/employees/form/form')
+            import('./features/users/form/form')
               .then(m => m.Form),
         },
         {
           path: 'employees/:id',
           loadComponent: () =>
-            import('./features/employees/form/form')
+            import('./features/users/form/form')
               .then(m => m.Form),
         },
   
@@ -44,19 +44,19 @@ export const routes: Routes = [
         {
           path: 'customers',
           loadComponent: () =>
-            import('./features/customers/list/list')
+            import('./features/users/list/list')
               .then(m => m.List),
         },
         {
           path: 'customers/new',
           loadComponent: () =>
-            import('./features/customers/form/form')
+            import('./features/users/form/form')
               .then(m => m.Form),
         },
         {
           path: 'customers/:id',
           loadComponent: () =>
-            import('./features/customers/form/form')
+            import('./features/users/form/form')
               .then(m => m.Form),
         },
   

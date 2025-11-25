@@ -1,6 +1,7 @@
-import { Customer, Employee } from "./employee.model";
+import { Customer, Employee } from "./user.model";
 
 export interface Company {
+    id: number;
     name: string,
     cnpj: string,
     address: string,

@@ -1,0 +1,62 @@
+.topbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: #111;
+    padding: 12px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    border-bottom: 1px solid #333;
+  }
+  
+  .menu {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .menu-btn {
+    background: transparent;
+    border: none;
+    color: #aaa;
+    font-size: 16px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: 0.2s;
+    border-radius: 6px;
+  }
+  
+  .menu-btn:hover {
+    background: #222;
+    color: #fff;
+  }
+  
+  .menu-btn.active {
+    background: #3b82f6;
+    color: white;
+  }
+  
+  .fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 56px;
+    height: 56px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+    transition: 0.2s;
+  }
+  
+  .fab:hover {
+    background: #2563eb;
+  }
+  

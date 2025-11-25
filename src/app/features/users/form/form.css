@@ -1,0 +1,152 @@
+.page-container {
+  padding: 40px;
+  max-width: 520px;
+  margin: 0 auto;
+  color: #1f2937; /* texto escuro */
+  position: relative;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 32px;
+  font-size: 26px;
+  color: #374151; /* cinza escuro */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  font-size: 14px;
+  color: #4b5563; /* texto de label */
+}
+
+input,
+select {
+  padding: 12px;
+  border-radius: 8px;
+  width: 100%;
+  background: #f9fafb; /* fundo claro */
+  border: 1px solid #d1d5db; /* borda mais clara */
+  color: #1f2937; /* texto escuro */
+  transition: border-color .2s, box-shadow .2s;
+}
+
+input:focus,
+select:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px #93c5fd;
+}
+
+.file-section {
+  margin-top: 14px;
+}
+
+.file-preview {
+  margin-top: 8px;
+  background: #f3f4f6; /* cinza claro */
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #374151;
+  border: 1px solid #d1d5db;
+}
+
+.company-section {
+  margin-top: 18px;
+}
+
+.company-pill {
+  background: #e5e7eb; /* cinza claro */
+  padding: 8px 12px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  width: fit-content;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+}
+
+.company-pill .remove {
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 2px 6px;
+  cursor: pointer;
+}
+
+.add-company {
+  background: #3b82f6;
+  padding: 8px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+button.submit {
+  margin-top: 20px;
+  background: #2563eb;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.delete {
+  margin-top: 8px;
+  background: #b91c1c;
+  padding: 12px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+}
+
+.error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #fecaca;
+}
+
+.remove-file {
+  margin-left: 12px;
+  background: #dc2626;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  color: white;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.remove-file:hover {
+  background: #b91c1c;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  color: #6b7280;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+.close-btn:hover {
+  color: #111827;
+}
