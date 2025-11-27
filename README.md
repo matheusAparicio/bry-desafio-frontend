@@ -32,9 +32,13 @@ Conforme definido no PDF do desafio, este Frontend atende integralmente aos segu
 
 - ✔ Projeto em Angular 17+, conforme solicitado.
 
-## Upload e Download de Arquivos (Estado Atual)
+## Limitações Conhecidas (Frontend)
 
-O Frontend possui a estrutura e os fluxos necessários para upload e download de documentos (PDF/JPG), porém essa funcionalidade, apesar de implementada parcialmente, não está finalizada na versão entregue. O backend já está preparado para receber e servir arquivos, mas a integração completa no front ainda não foi concluída.
+Devido ao foco estratégico na arquitetura do Backend e ao tempo disponível, as seguintes funcionalidades não foram concluídas na interface visual, mas **estão totalmente operacionais na API** e podem ser validadas via Postman:
+
+- **Upload/Download de Arquivos:** O Frontend possui a estrutura e os fluxos definidos, mas a integração final para envio e recebimento dos binários não foi concluída nesta versão.
+- **Vinculação de Empresas:** A interface para associar/desassociar usuários a empresas (Many-to-Many) não foi finalizada.
+- **Detalhamento de Vínculos:** A listagem detalhada de "quais usuários pertencem a qual empresa" foi simplificada na interface: atualmente é exibido apenas um **contador** de usuários vinculados, no componente da empresa na lista. A listagem inversa (empresas vinculadas ao usuário) também não foi implementada visualmente.
 
 ## Estrutura de Arquivos
 
